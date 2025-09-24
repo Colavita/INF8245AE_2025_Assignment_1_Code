@@ -9,10 +9,11 @@ y_test = pd.read_csv("y_test.csv").values
 
 lambda_list = [0.01, 0.1, 1, 10 ,100]
 metrics = ["MAE", "MaxError", "RMSE"]
+n_folds = 5
 
 results = {}
 for metric in metrics:
-    best_lambda, scores = cross_validate_ridge(X_train, y_train, lambda_list, 5, metric)
+    best_lambda, scores = cross_validate_ridge(X_train, y_train, lambda_list, n_folds, metric)
     results[metric] = (best_lambda, scores)
 
 print(results)
