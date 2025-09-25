@@ -25,7 +25,7 @@ def learning_rate_cosine_annealing(eta0: float, t: int, T: int) -> float:
 # Part (d)
 def gradient_step(X: np.ndarray, y: np.ndarray, w: np.ndarray, lamb:float, eta: float) -> np.ndarray:
     grad = ridge_gradient(X, y, w, lamb=lamb)
-    return w - eta * grad
+    return w - (eta * grad)
     
 
 # Part (e)

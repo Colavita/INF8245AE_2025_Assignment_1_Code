@@ -1,5 +1,5 @@
 import numpy as np
-from q1_1 import rmse, ridge_regression_optimize, data_matrix_bias, predict
+from q1_1 import rmse, ridge_regression_optimize, data_matrix_bias
 
 
 # Part (a)
@@ -8,6 +8,8 @@ def cv_splitter(X, y, k):
     Splits data into k folds for cross-validation.
     Returns a list of tuples: (X_train_fold, y_train_fold, X_val_fold, y_val_fold)
     """
+    np.random.seed(42)
+
     n = len(X)
     indices = np.arange(n)
     np.random.shuffle(indices)
@@ -56,14 +58,13 @@ def cross_validate_ridge(X, y, lambda_list, k, metric):
     scores = {}
     for lamb in lambda_list:
         fold_errors = []
-        for fold in folds:
-            X_train, y_train, X_val, y_val = fold
-
+        for X_train, y_train, X_val, y_val in folds:
             X_train = data_matrix_bias(X_train)
             X_val = data_matrix_bias(X_val)
 
             w = ridge_regression_optimize(X_train, y_train, lamb=lamb)
-            y_hat = predict(X_val, w)
+            
+            y_hat = X_val @ w
 
             if metric == "MAE":
                 err = MAE(y_val, y_hat)

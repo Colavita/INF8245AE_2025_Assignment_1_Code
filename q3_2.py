@@ -15,7 +15,7 @@ X_test = data_matrix_bias(X_test)
 schedules = ["constant", "exp_decay", "cosine"]
 eta0 = 0.001
 k = 0.001
-T= 1000
+T= 100
 lamb = 1.0
 
 for schedule in schedules:
