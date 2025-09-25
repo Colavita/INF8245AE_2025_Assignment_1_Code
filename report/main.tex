@@ -1,4 +1,4 @@
-\documentclass[11pt, a4paper]{report}
+\documentclass[11pt, a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{calc}
 \usepackage[T1]{fontenc}
@@ -12,6 +12,8 @@
 \usepackage[sort&compress]{natbib}
 \usepackage[french]{babel}
 \usepackage{enumitem}
+\usepackage{float}
+
 
 \geometry{margin=2.5cm}
 \setlength{\parskip}{0.5em}
@@ -40,16 +42,23 @@
 
 \section{Question 1: Linear and Weighted Ridge Regression}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{./assets/regression_comparison.png}
+\includegraphics[width=0.6\textwidth]{./assets/derivative.png}
+\caption{Derivative of the loss function for ridge regression with respect to the weights.}
+\label{fig:derivative}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{./assets/regression_comparison.png}
 \caption{Comparison of predictions from linear, ridge and weighted ridge regression on the test set.}
 \label{fig:linear_vs_weighted_ridge}
 \end{figure}
 
 \section{Question 2: Cross-Validation}
 
-\begin{table}[h!]
+\begin{table}[H]
 \centering
 \begin{tabular}{|l|c|c|c|c|c|c|}
 \hline
@@ -68,7 +77,7 @@ RMSE & 10 & 9.855 & 9.772 & 9.577 & 9.532 & 10.101 \\
 
 \section{Question 3: Gradient Descent for Ridge Regression}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{./assets/training_loss_comparison.png}
     \caption{Training loss vs iterations for different learning rate schedules in gradient descent for ridge regression.}
@@ -81,18 +90,23 @@ RMSE & 10 & 9.855 & 9.772 & 9.577 & 9.532 & 10.101 \\
 \hline
 \textbf{Learning Rate Schedule} & \textbf{RMSE} \\
 \hline
-Constant & 13.890951849807372 \\
+Constant & 13.8910 \\
 \hline
-Exponential Decay & 13.928319736225347 \\
+Exponential Decay & 13.9283 \\
 \hline
-Cosine Annealing & 14.347341446546864 \\
+Cosine Annealing & 14.3473 \\
 \hline
 \end{tabular}
 \caption{RMSE results for different learning rate schedules in gradient descent for ridge regression.}
 \label{tab:learning_rate_schedules}
 \end{table}
 
-
+Among the tested learning rate schedules, the constant learning rate shows the fastest decrease in training 
+loss and achieves the lowest test RMSE of 13.89, suggesting better generalization. Similarly, exponential decay showed 
+a fast decrease in training loss, with a slightly higher RMSE of 13.93, while cosine annealing plateaued early, indicating slower
+convergence and less effective learning within the given number of iterations. None of the schedules fully converged 
+within 100 iterations, as the training loss was still decreasing, but constant and exponential decay showed a 
+clear downward trend that could improve further with more iterations.
 
 \end{document}
 
