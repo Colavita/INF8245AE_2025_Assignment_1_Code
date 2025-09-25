@@ -17,17 +17,19 @@ def cv_splitter(X, y, k):
     X_shuffled = X[indices]
     y_shuffled = y[indices]
 
-    fold_sizes = [n // k + (1 if i < n % k else 0) for i in range(k)]
+    fold_sizes = [n // k] * k
+    remainder = n % k
+    fold_sizes[0] += remainder
 
     folds = []
 
-    current_index = 0
+    start = 0
     for fold_size in fold_sizes:
-        start = current_index
+        current_index = start
         end = current_index + fold_size
 
-        val_index = np.arange(start, end)
-        train_index = np.concatenate([np.arange(0, start), np.arange(end, n)])
+        val_index = np.arange(current_index, end)
+        train_index = np.concatenate([np.arange(0, current_index), np.arange(end, n)])
 
         X_val_fold = X_shuffled[val_index]
         y_val_fold = y_shuffled[val_index]
@@ -35,7 +37,7 @@ def cv_splitter(X, y, k):
         y_train_fold = y_shuffled[train_index]
 
         folds.append((X_train_fold, y_train_fold, X_val_fold, y_val_fold))
-        current_index = end
+        start = end
 
     return folds
 
@@ -53,17 +55,16 @@ def cross_validate_ridge(X, y, lambda_list, k, metric):
     metric: one of "MAE", "MaxError", "RMSE"
     Returns the lambda with best average score and a dictionary of mean scores.
     """
+    X = data_matrix_bias(X)
+
     folds = cv_splitter(X, y, k)
 
     scores = {}
     for lamb in lambda_list:
         fold_errors = []
         for X_train, y_train, X_val, y_val in folds:
-            X_train = data_matrix_bias(X_train)
-            X_val = data_matrix_bias(X_val)
+            w = ridge_regression_optimize(X_train, y_train, lamb)
 
-            w = ridge_regression_optimize(X_train, y_train, lamb=lamb)
-            
             y_hat = X_val @ w
 
             if metric == "MAE":

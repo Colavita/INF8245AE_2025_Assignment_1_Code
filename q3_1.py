@@ -42,8 +42,9 @@ def gradient_descent_ridge(X, y, lamb=1.0, eta0=0.1, T=500, schedule="constant",
         elif schedule == "cosine":
             eta = learning_rate_cosine_annealing(eta0, t, T)
         
-        w = gradient_step(X, y, w, lamb=lamb, eta=eta)
+        w = gradient_step(X, y, w, lamb, eta)
         y_hat = X @ w
-        L[t] = (1/n) * np.sum((y - y_hat)**2) + lamb * np.sum(w**2)
+        errors = y - y_hat
+        L[t] = ((1/n) * np.sum(errors**2)) + (lamb * np.sum(w**2))
 
     return w, L
