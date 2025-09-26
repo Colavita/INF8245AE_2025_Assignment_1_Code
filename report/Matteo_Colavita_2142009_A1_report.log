@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.25)  26 SEP 2025 16:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.25)  26 SEP 2025 16:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/mcola/Documents/school/Automne-2025/INF8245AE/Assignment_1/INF8245AE_2025_Assignment_1_Code/report/main.tex
-(c:/Users/mcola/Documents/school/Automne-2025/INF8245AE/Assignment_1/INF8245AE_2025_Assignment_1_Code/report/main.tex
+**c:/Users/mcola/Documents/school/Automne-2025/INF8245AE/Assignment_1/INF8245AE_2025_Assignment_1_Code/report/Matteo_Colavita_2142009_A1_report.tex
+(c:/Users/mcola/Documents/school/Automne-2025/INF8245AE/Assignment_1/INF8245AE_2025_Assignment_1_Code/report/Matteo_Colavita_2142009_A1_report.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
 (C:\Users\mcola\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -367,8 +367,8 @@ Package french3.ldf Info: Setting StandardEnumerateEnv=true for
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count310
 \l__pdf_internal_box=\box58
-) (main.aux)
-\openout1 = `main.aux'.
+) (Matteo_Colavita_2142009_A1_report.aux)
+\openout1 = `Matteo_Colavita_2142009_A1_report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
 LaTeX Font Info:    ... okay on input line 21.
@@ -443,9 +443,9 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package hyperref Info: Link coloring OFF on input line 21.
- (main.out) (main.out)
+ (Matteo_Colavita_2142009_A1_report.out) (Matteo_Colavita_2142009_A1_report.out)
 \@outlinefile=\write3
-\openout3 = `main.out'.
+\openout3 = `Matteo_Colavita_2142009_A1_report.out'.
 
 LaTeX Info: Redefining \degres on input line 21.
 <./assets/logo_polymtl.png, id=15, 402.50375pt x 161.60374pt>
@@ -501,24 +501,24 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has 
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.109 \end{document}
-                     <./assets/training_loss_comparison.png>] (main.aux)
+                     <./assets/training_loss_comparison.png>] (Matteo_Colavita_2142009_A1_report.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
-Package rerunfilecheck Info: File `main.out' has not changed.
+Package rerunfilecheck Info: File `Matteo_Colavita_2142009_A1_report.out' has not changed.
 (rerunfilecheck)             Checksum: 9E04A95DD5C50413552009C8BEF993DF;796.
  ) 
 Here is how much of TeX's memory you used:
  12718 strings out of 474486
- 204591 string characters out of 5743755
+ 205171 string characters out of 5743755
  1931542 words of memory out of 5000000
  34826 multiletter control sequences out of 15000+600000
  569604 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,9n,79p,453b,492s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,9n,79p,482b,492s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\mcola\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\mcola\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\mcola\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1095.pk> <C:\Users\mcola\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\mcola\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\mcola\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1440.pk> <C:\Users\mcola\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk> <C:\Users\mcola\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1440.pk> <C:\Users\mcola\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1728.pk><C:/Users/mcola/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
-Output written on main.pdf (3 pages, 864448 bytes).
+Output written on Matteo_Colavita_2142009_A1_report.pdf (3 pages, 864448 bytes).
 PDF statistics:
  272 PDF objects out of 1000 (max. 8388607)
  11 named destinations out of 1000 (max. 500000)
