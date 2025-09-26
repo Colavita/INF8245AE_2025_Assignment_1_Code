@@ -4,10 +4,10 @@ import pandas as pd
 from q3_1 import gradient_descent_ridge
 from q1_1 import data_matrix_bias, predict, rmse
 
-X_train = pd.read_csv("X_train.csv").values
-X_test = pd.read_csv("X_test.csv").values
-y_train = pd.read_csv("y_train.csv").values.flatten()
-y_test = pd.read_csv("y_test.csv").values.flatten()
+X_train = pd.read_csv("X_train.csv").to_numpy()
+X_test = pd.read_csv("X_test.csv").to_numpy()
+y_train = pd.read_csv("y_train.csv").to_numpy().flatten()
+y_test = pd.read_csv("y_test.csv").to_numpy().flatten()
 
 X_train = data_matrix_bias(X_train)
 X_test = data_matrix_bias(X_test)

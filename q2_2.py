@@ -9,10 +9,10 @@ def print_result(metric, best_lamb, scores):
     print("Scores: ", scores)
     print("-" * 100)
 
-X_train = pd.read_csv("X_train.csv").values
-X_test = pd.read_csv("X_test.csv").values
-y_train = pd.read_csv("y_train.csv").values
-y_test = pd.read_csv("y_test.csv").values
+X_train = pd.read_csv("X_train.csv").to_numpy()
+X_test = pd.read_csv("X_test.csv").to_numpy()
+y_train = pd.read_csv("y_train.csv").to_numpy().flatten()
+y_test = pd.read_csv("y_test.csv").to_numpy().flatten()
 
 lambda_list = [0.01, 0.1, 1, 10 ,100]
 metrics = ["MAE", "MaxError", "RMSE"]
