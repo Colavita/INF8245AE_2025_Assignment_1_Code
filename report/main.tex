@@ -101,12 +101,10 @@ Cosine Annealing & 14.3473 \\
 \label{tab:learning_rate_schedules}
 \end{table}
 
-Among the tested learning rate schedules, the constant learning rate shows the fastest decrease in training 
-loss and achieves the lowest test RMSE of 13.89, suggesting better generalization. Similarly, exponential decay showed 
-a fast decrease in training loss, with a slightly higher RMSE of 13.93, while cosine annealing plateaued early, indicating slower
-convergence and less effective learning within the given number of iterations. None of the schedules fully converged 
-within 100 iterations, as the training loss was still decreasing, but constant and exponential decay showed a 
-clear downward trend that could improve further with more iterations.
+Among the tested learning rate schedules, both constant and exponential decay schedules show a fast decrease in training
+loss and achieved low RMSE values of 13.89 and 13.93, suggesting great generalization. In contrast, cosine annealing plateaued early,
+indicating premature convergence at a suboptimal point. The rapid decay of the learning rate within the given amount of iterations
+may have caused smaller step sizes before reaching the minimum, preventing stable convergence despite ridge regression's convex loss function.
 
 \end{document}
 
