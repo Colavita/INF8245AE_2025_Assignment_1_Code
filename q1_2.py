@@ -45,8 +45,6 @@ def generate_plots(y_test, y_hat_ols, y_hat_ridge, y_hat_weighted_ridge, rmse_ol
     plt.savefig('regression_comparison.png', dpi=300, bbox_inches='tight')
     plt.show()
 
-    print("Plot saved as 'regression_comparison.png'")
-
 if __name__ == "__main__":
 
     X_train = pd.read_csv("X_train.csv").to_numpy()
@@ -58,7 +56,7 @@ if __name__ == "__main__":
     X_test = data_matrix_bias(X_test)
 
     w_ols = linear_regression_optimize(X_train, y_train)
-    w_ridge = ridge_regression_optimize(X_train, y_train, lamb=1.0)
+    w_ridge = ridge_regression_optimize(X_train, y_train, 1.0)
     lambda_vec =  np.array([0.01, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3])
     w_weighted_ridge = weighted_ridge_regression_optimize(X_train, y_train, lambda_vec)
 
