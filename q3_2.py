@@ -19,7 +19,7 @@ T= 100
 lamb = 1.0
 
 for schedule in schedules:
-    w, L = gradient_descent_ridge(X_train, y_train, lamb=lamb, eta0=eta0, T=T, schedule=schedule, k_decay=k)
+    w, L = gradient_descent_ridge(X_train, y_train, lamb, eta0, T, schedule, k)
 
     plt.plot(range(T), L, label= schedule)
     
